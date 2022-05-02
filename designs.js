@@ -1,3 +1,9 @@
+function clearGrid() {
+    const colRow = document.querySelectorAll("tr");
+    colRow.forEach((row) => {
+        row.remove();
+    });
+}
 const pixelCanvas = document.getElementById("pixelCanvas");
 const sizePicker = document.getElementById("sizePicker");
 // Select color input
@@ -7,6 +13,8 @@ function makeGrid(event) {
     event.preventDefault();
     //reset canvas back to default
     pixelCanvas.innerHTML = '';
+    //clears the grid
+    clearGrid();
     //select size input
     const height = document.getElementById("inputHeight").value;
     const width = document.getElementById("inputWidth").value;
